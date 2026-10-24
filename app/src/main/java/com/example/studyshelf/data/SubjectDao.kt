@@ -10,7 +10,7 @@ import androidx.room.Update
 interface SubjectDao {
 
     @Insert
-    suspend fun insertSubject(subject: Subject)
+    suspend fun insertSubject(subject: Subject): Long
 
     @Query("SELECT * FROM subjects ORDER BY id DESC")
     suspend fun getAllSubjects(): List<Subject>
