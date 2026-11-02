@@ -1,47 +1,71 @@
-package com.example.studyshelf
+Text(
+text = "My Subjects (${subjects.size})",
+style = MaterialTheme.typography.titleMedium,
+fontWeight = FontWeight.Bold
+)
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.studyshelf.ui.theme.StudyshelfTheme
+Spacer(modifier = Modifier.height(8.dp))
 
-class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            StudyshelfTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+if (subjects.isEmpty()) {
+    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+        Text("No subjects yet. Tap '+ Add' to add your first college subject!")
+    }
+} else {
+    LazyColumn(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+        items(subjects) { subject ->
+            Card(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clickable { onSubjectClick(subject) },
+                colors = CardDefaults.cardColors(containerColor = Color(0xFFF1F8E9))
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(16.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        modifier = Modifier.weight(1f)
+                    ) {
+                        Box(
+                            modifier = Modifier
+                                .size(40.dp)
+                                .background(Color(0xFF2E7D32), CircleShape),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(
+                                text = subject.name.take(1).uppercase(),
+                                color = Color.White,
+                                fontWeight = FontWeight.Bold
+                            )
+                        }
+                        Spacer(modifier = Modifier.width(12.dp))
+                        Column {
+                            Text(
+                                text = subject.name,
+                                style = MaterialTheme.typography.titleMedium,
+                                fontWeight = FontWeight.Bold
+                            )
+                            if (subject.description.isNotBlank()) {
+                                Text(
+                                    text = subject.description,
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = Color.DarkGray
+                                )
+                            }
+                        }
+                    }
+                    TextButton(onClick = { onEditSubjectClick(subject) }) {
+                        Text("Edit", color = Color(0xFF2E7D32))
+                    }
                 }
             }
         }
     }
 }
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
 }
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    StudyshelfTheme {
-        Greeting("Android")
-    }
+}
 }
