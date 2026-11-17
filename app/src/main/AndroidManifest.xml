@@ -19,9 +19,24 @@
             </intent-filter>
         </activity>
 
+
+        <activity
+            android:name=".screens.ResourcesActivity"
+            android:exported="false" />
+
         <activity
             android:name=".screens.ResourceDetailActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".screens.AddResourceActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
 
     </application>
 
