@@ -1,5 +1,6 @@
 package com.example.studyshelf.screens
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -28,6 +29,7 @@ class ResourcesActivity : ComponentActivity() {
     private var subjectName: String = "Subject"
     private var category: String = "Lectures"
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_resource)

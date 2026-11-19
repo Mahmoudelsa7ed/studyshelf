@@ -2,8 +2,8 @@ package com.example.studyshelf.utils
 
 import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import android.widget.Toast
+import androidx.core.net.toUri
 
 object IntentHelper {
 
@@ -18,7 +18,7 @@ object IntentHelper {
             rawUrl
         }
         try {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(formattedUrl))
+            val intent = Intent(Intent.ACTION_VIEW, formattedUrl.toUri())
             context.startActivity(intent)
         } catch (_: Exception) {
             Toast.makeText(context, "Could not open link", Toast.LENGTH_SHORT).show()
@@ -40,14 +40,12 @@ object IntentHelper {
         context.startActivity(chooser)
     }
 
-    fun sendEmailInquiry(context: Context, subjectTitle: String) {
-        try {
-            val intent = Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:")).apply {
-                putExtra(Intent.EXTRA_SUBJECT, "StudyShelf Question: $subjectTitle")
-            }
-            context.startActivity(intent)
-        } catch (_: Exception) {
-            Toast.makeText(context, "No email app found", Toast.LENGTH_SHORT).show()
+    fun sendEmailInquiry(context: Context, subjectTitle: String) = try {
+        val intent = Intent(Intent.ACTION_SENDTO, "mailto:".toUri()).apply {
+            putExtra(Intent.EXTRA_SUBJECT, "StudyShelf Question: $subjectTitle")
         }
+        context.startActivity(intent)
+    } catch (_: Exception) {
+        Toast.makeText(context, "No email app found", Toast.LENGTH_SHORT).show()
     }
 }

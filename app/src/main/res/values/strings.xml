@@ -1,3 +1,19 @@
 <resources>
-    <string name="app_name">studyshelf</string>
+    <string name="app_name">StudyShelf</string>
+    <string name="back">← Back</string>
+    <string name="add_study_resource">Add Study Resource</string>
+    <string name="resource_title_label">Resource Title:</string>
+    <string name="resource_title_hint">Enter title (e.g. Lecture 1 Slides)</string>
+    <string name="resource_url_label">Resource Link / URL:</string>
+    <string name="resource_url_hint">https://…</string>
+    <string name="resource_desc_label">Description / Notes:</string>
+    <string name="resource_desc_hint">Enter optional notes</string>
+    <string name="category_label">Category:</string>
+    <string name="category_lectures">Lectures</string>
+    <string name="category_labs">Labs</string>
+    <string name="category_tasks">Tasks</string>
+    <string name="save_resource">Save Resource</string>
+    <string name="subject_lectures_default">Subject - Lectures</string>
+    <string name="add_new_resource">+ Add New Resource</string>
+    <string name="saved_resources_label">Saved Resources (Tap item for details):</string>
 </resources>
