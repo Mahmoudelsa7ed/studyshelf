@@ -30,7 +30,7 @@ class ResourcesActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_resources)
+        setContentView(R.layout.activity_resource)
 
         listView = findViewById(R.id.listViewResources)
         btnAdd = findViewById(R.id.btnOpenAddResource)
