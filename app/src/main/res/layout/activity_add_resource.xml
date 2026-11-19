@@ -10,14 +10,15 @@
         android:id="@+id/btnBackAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="← Back"
+        android:minHeight="48dp"
+        android:text="@string/back"
         android:backgroundTint="#2E7D32"
         android:textColor="#FFFFFF" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Study Resource"
+        android:text="@string/add_study_resource"
         android:textSize="22sp"
         android:textStyle="bold"
         android:textColor="#1B5E20"
@@ -27,49 +28,55 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Resource Title:"
+        android:text="@string/resource_title_label"
         android:textSize="16sp" />
 
     <EditText
         android:id="@+id/etResourceTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter title (e.g. Lecture 1 Slides)"
+        android:minHeight="48dp"
+        android:hint="@string/resource_title_hint"
         android:inputType="text"
+        android:importantForAutofill="no"
         android:layout_marginBottom="12dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Resource Link / URL:"
+        android:text="@string/resource_url_label"
         android:textSize="16sp" />
 
     <EditText
         android:id="@+id/etResourceUrl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="https://..."
+        android:minHeight="48dp"
+        android:hint="@string/resource_url_hint"
         android:inputType="textUri"
+        android:importantForAutofill="no"
         android:layout_marginBottom="12dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Description / Notes:"
+        android:text="@string/resource_desc_label"
         android:textSize="16sp" />
 
     <EditText
         android:id="@+id/etResourceDesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter optional notes"
+        android:minHeight="48dp"
+        android:hint="@string/resource_desc_hint"
         android:inputType="textMultiLine"
+        android:importantForAutofill="no"
         android:layout_marginBottom="12dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Category:"
+        android:text="@string/category_label"
         android:textSize="16sp"
         android:textStyle="bold" />
 
@@ -84,21 +91,24 @@
             android:id="@+id/rbLectures"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lectures"
+            android:minHeight="48dp"
+            android:text="@string/category_lectures"
             android:checked="true" />
 
         <RadioButton
             android:id="@+id/rbLabs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Labs"
+            android:minHeight="48dp"
+            android:text="@string/category_labs"
             android:layout_marginStart="16dp" />
 
         <RadioButton
             android:id="@+id/rbTasks"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tasks"
+            android:minHeight="48dp"
+            android:text="@string/category_tasks"
             android:layout_marginStart="16dp" />
     </RadioGroup>
 
@@ -106,7 +116,8 @@
         android:id="@+id/btnSaveResource"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save Resource"
+        android:minHeight="48dp"
+        android:text="@string/save_resource"
         android:backgroundTint="#2E7D32"
         android:textColor="#FFFFFF" />
 

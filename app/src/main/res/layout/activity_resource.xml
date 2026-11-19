@@ -10,7 +10,8 @@
         android:id="@+id/btnBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back"
+        android:minHeight="48dp"
+        android:text="@string/back"
         android:backgroundTint="#2E7D32"
         android:textColor="#FFFFFF" />
 
@@ -18,7 +19,7 @@
         android:id="@+id/tvHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Subject - Lectures"
+        android:text="@string/subject_lectures_default"
         android:textSize="22sp"
         android:textStyle="bold"
         android:textColor="#1B5E20"
@@ -29,7 +30,8 @@
         android:id="@+id/btnOpenAddResource"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="+ Add New Resource"
+        android:minHeight="48dp"
+        android:text="@string/add_new_resource"
         android:backgroundTint="#2E7D32"
         android:textColor="#FFFFFF"
         android:layout_marginBottom="16dp" />
@@ -37,7 +39,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Saved Resources (Tap item for details):"
+        android:text="@string/saved_resources_label"
         android:textSize="16sp"
         android:textStyle="bold"
         android:layout_marginBottom="8dp" />

@@ -32,8 +32,9 @@ abstract class StudyShelfDatabase : RoomDatabase() {
                             context.applicationContext,
                             StudyShelfDatabase::class.java,
                             "studyshelf_db"
+
                         )
-                            .fallbackToDestructiveMigration()
+                            .fallbackToDestructiveMigration(false)
                             .build()
                     }
                 }

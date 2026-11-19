@@ -88,7 +88,7 @@ fun SubjectSectionsScreen(
                 },
                 navigationIcon = {
                     TextButton(onClick = onBack) {
-                        Text("← Back", color = Color.White)
+                        Text("Back", color = Color.White)
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
@@ -142,7 +142,7 @@ fun SubjectSectionsScreen(
                         modifier = Modifier.padding(20.dp)
                     ) {
                         Text(
-                            text = "$categoryName →",
+                            text = categoryName,
                             style = MaterialTheme.typography.titleLarge,
                             fontWeight = FontWeight.Bold,
                             color = Color(0xFF1B5E20)

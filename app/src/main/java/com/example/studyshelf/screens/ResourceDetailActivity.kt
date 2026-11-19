@@ -173,7 +173,7 @@ fun ResourceDetailScreen(
                 modifier = Modifier.fillMaxWidth(),
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF2E7D32))
             ) {
-                Text("Open Link / Video in Browser ↗")
+                Text("Open Link / Video in Browser")
             }
 
             OutlinedButton(
